@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<title>SnoTurnover</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="#">SnoTurnover</a>
+				</li>
+			</ol>
+			<h1 style="display: inline-block;">SnoTurnover </h1>&nbsp;
+			<p class="label label-success">stable</p>
+			<table class="table table-hover">
+				<tr>
+					<td>API URL</td>
+					<td>http://shenjingstudio.com/ucard/SnoTurnover.php</td>
+				</tr>
+				<tr class="active">
+					<td>HTTP Request Method</td>
+					<td>Post</td>
+				</tr>
+				<tr class="danger">
+					<td>Parameter</td>
+					<td>"StuNum":(String), "Password":(String with Base64 encode), "QueryType":(String "Today" or "Week")</td>
+				</tr>
+				<tr class="success">
+					<td>Return Type</td>
+					<td>JSON String</td>
+				</tr>
+				<tr class="info">
+					<td>Default Encoding</td>
+					<td>UTF-8</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-success">
+						<div class="panel-heading">Request With Right Parameters</div>
+						<div class="panel-body">
+							<p>{"status":"OK","Array":[{"交易时间":"2015/4/18 16:18:19","商户名称":"","交易名称":"银行转帐","交易金额":"1","卡余额":"64.57"},{"交易时间":"2015/4/18 13:09:52","商户名称":"中苑南门商铺同和超市","交易名称":"持卡人消费","交易金额":"-3.2","卡余额":"64.57"},{"交易时间":"2015/4/18 9:48:21","商户名称":"中区小餐厅学生餐厅2","交易名称":"持卡人消费","交易金额":"-3.4","卡余额":"67.77"},{"交易时间":"2015/4/17
+								17:37:48","商户名称":"中区老食堂一楼大厅","交易名称":"持卡人消费","交易金额":"-10","卡余额":"71.17"},{"交易时间":"2015/4/17 15:43:13","商户名称":"中区老食堂一楼梦梦蛋糕房","交易名称":"持卡人消费","交易金额":"-4","卡余额":"81.17"},{"交易时间":"2015/4/17 11:28:58","商户名称":"中区新食堂三楼快餐","交易名称":"持卡人消费","交易金额":"-7.5","卡余额":"85.17"},{"交易时间":"2015/4/16
+								18:09:36","商户名称":"中区新食堂三楼快餐","交易名称":"持卡人消费","交易金额":"-7.5","卡余额":"92.67"},{"交易时间":"2015/4/16 7:35:07","商户名称":"中区小餐厅学生餐厅2","交易名称":"持卡人消费","交易金额":"-3.6","卡余额":"100.17"},{"交易时间":"2015/4/15 17:59:59","商户名称":"中苑南门商铺同和超市","交易名称":"持卡人消费","交易金额":"-3.5","卡余额":"103.77"},{"交易时间":"2015/4/15
+								12:18:40","商户名称":"中苑南门商铺同和超市","交易名称":"持卡人消费","交易金额":"-3.2","卡余额":"107.27"}]}
+							</p>
+						</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-heading">Request With Wrong Parameters</div>
+						<div class="panel-body">
+							<p>{"status":"failed"}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="text-center">
+				<a href="mailto:991405736@qq.com?subject=BugReport" class="btn btn-info pull-right"><span class="glyphicon glyphicon-envelope"></span> Bug Report</a>
+				<p>&copy;2015 by Zhilong Wang,powered by <a href="http://shenjingstudio.com">shenjingstudio.com</a>
+			</footer>
+		</div>
+	</body>
+
+</html>

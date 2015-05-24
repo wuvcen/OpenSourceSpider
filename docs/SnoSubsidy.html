@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="#">SnoSubsidy</a>
+				</li>
+			</ol>
+			<h1 style="display: inline-block;">SnoSubsidy </h1>&nbsp;
+			<p class="label label-success">stable</p>
+			<table class="table table-hover">
+				<tr>
+					<td>API URL</td>
+					<td>http://shenjingstudio.com/ucard/SnoSubsidy.php</td>
+				</tr>
+				<tr class="active">
+					<td>HTTP Request Method</td>
+					<td>Post</td>
+				</tr>
+				<tr class="danger">
+					<td>Parameter</td>
+					<td>"StuNum":(String), "Password":(String with Base64 encode)</td>
+				</tr>
+				<tr class="success">
+					<td>Return Type</td>
+					<td>JSON String</td>
+				</tr>
+				<tr class="info">
+					<td>Default Encoding</td>
+					<td>UTF-8</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-success">
+						<div class="panel-heading">Request With Right Parameters</div>
+						<div class="panel-body">
+							<p>{"status":"OK","Array":[{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/4/12 8:22:19","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/4/7 7:23:13","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/3/31
+								9:37:05","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/3/23 15:02:09","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/3/18 17:27:53","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/3/9
+								11:29:49","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/3/2 10:25:12","交易名称":"银行转帐","交易金额":"￥100"},{"补助账号":"***","补助类型":"00","补助状态":"已领","交易时间":"2015/1/12 12:24:18","交易名称":"银行转帐","交易金额":"￥50"}]}
+							</p>
+						</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-heading">Request With Wrong Parameters</div>
+						<div class="panel-body">
+							<p>{"statues":"failed"}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="text-center">
+				<a href="mailto:991405736@qq.com?subject=BugReport" class="btn btn-info pull-right"><span class="glyphicon glyphicon-envelope"></span> Bug Report</a>
+				<p>&copy;2015 by Zhilong Wang,powered by <a href="http://shenjingstudio.com">shenjingstudio.com</a>
+				</p>
+			</footer>
+		</div>
+	</body>
+
+</html>

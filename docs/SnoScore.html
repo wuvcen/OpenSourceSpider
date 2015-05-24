@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<title>SnoDetail</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="#">SnoScore</a>
+				</li>
+			</ol>
+			<h1 style="display: inline-block;">SnoScore </h1>&nbsp;
+			<p class="label label-danger">not stable</p>
+			<table class="table table-hover">
+				<tr>
+					<td>API URL</td>
+					<td>http://shenjingstudio.com/ucard/SnoScore.php</td>
+				</tr>
+				<tr class="active">
+					<td>HTTP Request Method</td>
+					<td>Post</td>
+				</tr>
+				<tr class="danger">
+					<td>Parameter</td>
+					<td>"StuNum":(String), "Password":(String with Base64 encode), "pageIndex":(Number String)</td>
+				</tr>
+				<tr class="success">
+					<td>Return Type</td>
+					<td>JSON String</td>
+				</tr>
+				<tr class="info">
+					<td>Default Encoding</td>
+					<td>UTF-8</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-success">
+						<div class="panel-heading">Request With Right Parameters</div>
+						<div class="panel-body">
+							<p>{"success":true,"msg":null,"obj":[{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"Unix系统原理及应用","XF":"2","CJ":"92"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"Web技术与应用","XF":"2","CJ":"85"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"计算机仿真","XF":"2","CJ":"78"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"计算机辅助设计（双语）","XF":"2","CJ":"优秀"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"计算机辅助设计工程应用","XF":"1","CJ":"中等"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"计算机图像处理","XF":"3","CJ":"80"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"计算机网络","XF":"3","CJ":"79"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"计算机网络课程设计","XF":"1","CJ":"90"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"气象信息系统工程","XF":"2","CJ":"85"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"气象仪器","XF":"2","CJ":"89"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"数据库系统","XF":"3","CJ":"79"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"数据库系统课程设计","XF":"1","CJ":"89"},{"XN":"2014-2015","XQ":"1","XH":"20121308***","KCMC":"图像处理技术应用实践","XF":"1","CJ":"优秀"}]}</p>
+						</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-heading">Request With Wrong Parameters</div>
+						<div class="panel-body">
+							<p>{"success":false,"msg":"暂无数据","obj":null}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="text-center">
+				<a href="mailto:991405736@qq.com?subject=BugReport" class="btn btn-info pull-right"><span class="glyphicon glyphicon-envelope"></span> Bug Report</a>
+				<p>&copy;2015 by Zhilong Wang,powered by <a href="http://shenjingstudio.com">shenjingstudio.com</a>
+			</footer>
+		</div>
+	</body>
+
+</html>

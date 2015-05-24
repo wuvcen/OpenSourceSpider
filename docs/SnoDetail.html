@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<title>SnoDetail</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="#">SnoDetail</a>
+				</li>
+			</ol>
+			<h1 style="display: inline-block;">SnoDetail </h1>&nbsp;
+			<p class="label label-success">stable</p>
+			<table class="table table-hover">
+				<tr>
+					<td>API URL</td>
+					<td>http://shenjingstudio.com/ucard/SnoDetail.php</td>
+				</tr>
+				<tr class="active">
+					<td>HTTP Request Method</td>
+					<td>Post</td>
+				</tr>
+				<tr class="danger">
+					<td>Parameter</td>
+					<td>"StuNum":(String), "Password":(String with Base64 encode)</td>
+				</tr>
+				<tr class="success">
+					<td>Return Type</td>
+					<td>JSON String</td>
+				</tr>
+				<tr class="info">
+					<td>Default Encoding</td>
+					<td>UTF-8</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-success">
+						<div class="panel-heading">Request With Right Parameters</div>
+						<div class="panel-body">
+							<p>{"status":"OK","姓名":"***","学工号":"20121308***","校园卡账号":"***","校园卡余额":"99.10","银行卡号":"622848***","当前过渡余额":"0","上次过渡余额":"0","挂失状态":"正常","冻结状态":"正常卡","身份类型":"本科生","部门名称":"3班"}</p>
+						</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-heading">Request With Wrong Parameters</div>
+						<div class="panel-body">
+							<p>{"statues":"failed"}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="text-center">
+				<a href="mailto:991405736@qq.com?subject=BugReport" class="btn btn-info pull-right"><span class="glyphicon glyphicon-envelope"></span> Bug Report</a>
+				<p>&copy;2015 by Zhilong Wang,powered by <a href="http://shenjingstudio.com">shenjingstudio.com</a>
+			</footer>
+		</div>
+	</body>
+
+</html>

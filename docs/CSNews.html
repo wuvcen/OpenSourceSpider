@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<title>SnoChangePwd</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="#">CSNews</a>
+				</li>
+			</ol>
+			<h1 style="display: inline-block;">CSNews </h1>&nbsp;
+			<span class="label label-success">stable</span>
+			<table class="table table-hover">
+				<tr>
+					<td>API URL</td>
+					<td>http://shenjingstudio.com/ucard/CSNews.php</td>
+				</tr>
+				<tr class="active">
+					<td>HTTP Request Method</td>
+					<td>Post</td>
+				</tr>
+				<tr class="danger">
+					<td>Parameter</td>
+					<td>"type":(String{dnews(动态新闻),keyan(科研新闻),jiaowu(教务通知),xuesheng(学生工作),zhaojiu(招生就业)}), "page":(Number String)</td>
+				</tr>
+				<tr class="success">
+					<td>Return Type</td>
+					<td>JSON String</td>
+				</tr>
+				<tr class="info">
+					<td>Default Encoding</td>
+					<td>UTF-8</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-success">
+						<div class="panel-heading">Request With Right Parameters</div>
+						<div class="panel-body">
+							<p>{"status":"OK","Array":[{"title":"sometitle","link":"http://....","zhaiyao":"some zhaiyao"},{...}]}</p>
+						</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-heading">Request With Wrong Parameters</div>
+						<div class="panel-body">
+							<p>{"status":"failed"}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="text-center">
+				<a href="mailto:991405736@qq.com?subject=BugReport" class="btn btn-info pull-right"><span class="glyphicon glyphicon-envelope"></span> Bug Report</a>
+				<p>&copy;2015 by Zhilong Wang,powered by <a href="http://shenjingstudio.com">shenjingstudio.com</a>
+			</footer>
+		</div>
+	</body>
+
+</html>
