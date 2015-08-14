@@ -1,10 +1,52 @@
 <html>
 	<meta charset="utf-8" />
 	<?php
-		$rs = '{"status":"OK","Array":[{"title":"计软院召开全体研究生会议","link":"http://cs.nuist.edu.cn/toArticle.action?id=2845""zhaiyao":"为进一步提高研究生的学习主观能动性，端正学习态度，明确学习目的，提升研究生培养质量，4月21日，计算机与软件学院在计算机楼112召开了全体研究生大会。院党委书记王桂芝、研究生辅导员周磊以及我院的全体研"},{"title":"我院在第六届“蓝桥杯”全国软件大赛个人赛中获佳绩","link":"http://cs.nuist.edu.cn/toArticle.action?id=2846""zhaiyao":"第六届蓝桥杯全国软件和信息技术专业人才大赛个人赛传来喜讯，我院同学在比赛中获得一等奖10项，二等奖15项，三等奖14项。其中取得一等奖的10位同学将获得于5月底在北京举行的全国总决赛的资格。"},{"title":"跳动青春，绳系未来——计软院体育文化节跳绳纪实","link":"http://cs.nuist.edu.cn/toArticle.action?id=2823""zhaiyao":"为倡导“每天锻炼一小时，健康生活一辈子”的健康理念，全面提高同学们的综合素质，活跃校园气氛，增强同学们之间的凝聚力，我校近期举行了体育文化节，同学们都积极参与，比赛前认真练习，挥洒着运动激情的汗水。"},{"title":"走向春天，健康生活","link":"http://cs.nuist.edu.cn/toArticle.action?id=2770""zhaiyao":"春暖花开，阳光明媚。4月1日，计算机与软件学院分工会积极响应““健康生活、快乐工作”的理念”，组织全体教职工集体参加“春季校园行健身走活动”，举办春季踏青登山健身活动。
-中午12:30，学院60多名"},{"title":"计软院教职工乒乓球比赛落下帷幕","link":"http://cs.nuist.edu.cn/toArticle.action?id=2771""zhaiyao":"4月1日下午，计算机与软件学院2015年度教职工乒乓球赛胜利落下帷幕。
-全院共有56名教职工以系为单位参加了此次比赛。经过一个下午的激烈角逐，选拔出了参加校工会组织的“2015年度我校教职工乒乓球比"},{"title":"我院张正宇同学事迹获《南京日报》报道","link":"http://cs.nuist.edu.cn/toArticle.action?id=2668""zhaiyao":"新闻链接：
-http:njrb.njdaily.cnnjrbhtml2015-0205content_145330.htm"}]}';
-		var_dump($out = json_decode($rs));
+	include 'libs.php';
+	//图书馆系统
+	$postdata = array('strSearchType' => 'title', 'match_flag' => 'forward', 'historyCount' => '1', 'displaypg' => '20', 'showmode' => 'list', 'sort' => 'CATA_DATE', 'orderby' => 'desc', 'dept' => 'ALL', 'strText' => 'iPhone');
+	$url = "http://lib2.nuist.edu.cn/opac/openlink.php";
+	$rs = grab_post($url, $postdata);
+	$urlPrefix = 'http://lib2.nuist.edu.cn/opac/';
+	$pagePrefix = 'http://lib2.nuist.edu.cn/opac/openlink.php';
+
+	$match_book_list = '/<ol id="search_book_list">(.*?)<\/ol>/is';
+	preg_match_all($match_book_list, $rs, $contentOut);
+	$book_list = $contentOut[0][0];
+	$match_book_info = '/<li class="book_list_info">(.*?)<\/li>/is';
+	preg_match_all($match_book_info, $book_list, $bookOut);
+
+	$bookNum_thispg = count($bookOut[0]);
+
+	$match_page_indicator = '/<div class="book_article numstyle">(.*?)<\/div>/is';
+	$matchNextPageHref = '/<a.*?(?: \\t\\r\\n)?href=[\'"]?(.+?)[\'"]?(?:(?: \\t\\r\\n)+.*?)?>下一页<\/a.*?>/sim';
+	$matchPrePageHref = '/<a.*?(?: \\t\\r\\n)?href=[\'"]?(.+?)[\'"]?(?:(?: \\t\\r\\n)+.*?)?>上一页<\/a.*?>/sim';
+	preg_match_all($match_page_indicator, $rs, $pageIndicator);
+	preg_match_all($matchNextPageHref, $pageIndicator[0][0], $nextHref);
+	preg_match_all($matchPrePageHref, $pageIndicator[0][0], $preHref);
+	//	echo count($preHref[0]);
+	if (count($nextHref[0]) > 0) {
+				echo $nextHref[0][0];
+				$nextHrefString = strstr($nextHref[0][0], '>',true);
+				$nextHrefString = strstr($nextHrefString, '< html',true);
+				echo $nextHrefString;
+//		echo $nextHref[0][0];
+	} else {
+		echo '""';
+	}
+
+	//中文图书，馆藏
+	$match_book_info = '/<span>(.*?)<\/span>/is';
+	preg_match_all($match_book_info, $bookOut[0][0], $bookInfo);
+	//	echo count($bookInfo[0]);
+	//获得图书名称和链接
+	$matchref = '/<a.*?(?: \\t\\r\\n)?href=[\'"]?(.+?)[\'"]?(?:(?: \\t\\r\\n)+.*?)?>(.+?)<\/a.*?>/sim';
+	preg_match_all($matchref, $bookOut[0][0], $bookTitle);
+	//标题
+	$title = substr(strstr(strip_tags($bookTitle[0][0]), '.'), 1);
+	//链接
+	$hrefstring = strstr(strstr($bookTitle[0][0], '>', true), 'href="');
+	$hrefstring = trim($hrefstring);
+	$hrefstring = substr($hrefstring, 6, -1);
+	$hrefstring = $urlPrefix . $hrefstring;
 	?>
 </html>
